@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class testRodCutting{
+public class rodCuttingTest{
 	static int randomInt(int hi){
 		return (int)(Math.random()*100) % hi;
 	}
