@@ -18,15 +18,30 @@ public class matrixChainMult{
 				int j = i + d - 1	;
 /* now compute m[i,j] = min_k{ m[i,k], m[k+1, j], p[i-1] * p[k] * p[j]}
  */ 
-				for(int k = i, min = m[i][k] + m[k+1][j] + p[i-1] * p[k] * p[j]; k <= j-1; k++){
+				m[i][j] = m[i][i] + m[i+1][j] + p[i-1] * p[i] * p[j];//init 
+				s[i][j] = i; //init s[i][j] to cut(parenthesize) at i;
+				for(int k = i ; k <= j-1; k++){ //find the min number of mults
 					q = m[i][k] + m[k+1][j] + p[i-1] * p[k] * p[j];
-					if( q < min)
-						min = q;
-					m[i][j] = min;
-					s[i][j] = k;	
+					if( q < m[i][j]){
+						m[i][j] = q;
+						s[i][j] = k;	
+					}
 				}
 			}
 		}
+		printTable(m);
+		printTable(s);
 		return m;	
 	}
+	
+	static void printTable(int m[][]){
+		for(int i = 1; i < m.length; i++){
+			for(int j = 1; j < m[i].length; j++){
+				System.out.print(m[i][j] + "\t");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+
 }
