@@ -2,7 +2,7 @@ public class matrixChainMultTest{
 	static int randomInt(int hi){
 		return (int)(Math.random()*100) % hi;
 	}
-	
+
 
 	public static void main(String argv[])	{
 		int p[] = {30, 35, 15, 5, 10, 20, 25};

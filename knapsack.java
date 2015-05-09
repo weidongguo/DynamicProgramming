@@ -1,3 +1,4 @@
+/* Weidong Guo */
 public class knapsack{
 	public static int[][] knapsack(int[]v,int[]w,int n, int totalWeight){
 		int c[][] = new int[n+1][totalWeight+1];
